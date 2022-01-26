@@ -1,6 +1,6 @@
 # Migrate Submodules
 
-This is a small script to migrate submodules recursively using [sed](https://man7.org/linux/man-pages/man1/sed.1p.html).
+This is a small script to migrate submodules recursively using [sed](https://man7.org/linux/man-pages/man1/sed.1p.html). This script will not import repositories for you and assumes all required sub repositories have already been imported to your target.
 
 You can run this script in any git repository and it will recursively itterate submodules do the following:
 - Preform the sed command provided via `-s` on .gitmodules
