@@ -16,7 +16,7 @@ git clone https://github.com/austenstone/main-test1.git
 cd main-test1
 ```
 
-Example repository being migrated from bitbucket to github:
+Run the script. Example is migrating the url from `bitbucket.org` to `github.com`:
 ```bash
 migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
 ```
@@ -40,6 +40,7 @@ curl https://raw.githubusercontent.com/austenstone/migrate-submodules/main/migra
 chmod +x migrate-submodules.sh
 ```
 Script tested on Ubuntu and MacOS.
+
 ## [main-test1](https://github.com/austenstone/main-test1) repo hierarchy
 main-test1 is the root of a small set of repos and is used to test the functionality.
 ```mermaid
@@ -48,3 +49,8 @@ graph TD;
     child-test1-->child-test1-child ;
     main-test1-->child-test2;
 ```
+
+## Possible Improvements 🚧
+- Use `set-url [--] <path> <newurl>` instead of sed.
+- Sync all branches in the script
+- Dynamically get the default branch using `git remote show origin | sed -n '/HEAD branch/s/.*: //p'`
