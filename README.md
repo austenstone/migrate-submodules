@@ -5,7 +5,7 @@ This is a small script to migrate submodules recursively using [sed](https://man
 You can run this script in any git repository and it will recursively itterate submodules do the following:
 - Preform the sed command provided via `-s` on .gitmodules
 - Synchronizes submodules' remote URL configuration setting to the value specified in .gitmodules
-- Commits the changes to the branch specified using the message `-m`
+- Commits the changes to the branch specified using the `-b` with the message provided via `-m`
 
 You still need to push the changes it makes to remote.
 
