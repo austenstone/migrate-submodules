@@ -9,7 +9,7 @@ You can run this script in any git repository and it will recursively itterate s
 
 You still need to push the changes it makes to remote.
 
-## Usage
+## Usage 🏃‍♂️
 Clone your repo that contains submodules and cd inside:
 ```bash
 git clone https://github.com/austenstone/main-test1.git
@@ -33,7 +33,7 @@ for BRANCH in `ls .git/refs/heads`; do git rebase master $BRANCH; done
 git push --all origin
 ```
 
-## Install
+## Install ⬇️
 ```bash
 cd /usr/local/bin
 curl https://raw.githubusercontent.com/austenstone/migrate-submodules/main/migrate-submodules.sh > migrate-submodules.sh
@@ -54,3 +54,6 @@ graph TD;
 - Use `set-url [--] <path> <newurl>` instead of sed.
 - Sync all branches in the script
 - Dynamically get the default branch using `git remote show origin | sed -n '/HEAD branch/s/.*: //p'`
+
+## Inspiration ✨
+- [Enteee/git-submodule-url-rewrite](https://github.com/Enteee/git-submodule-url-rewrite)
