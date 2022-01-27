@@ -15,13 +15,15 @@ You can run this script in any git repository and it will recursively itterate s
 - This script will not import repositories for you and assumes all required repositories have already been imported to your target. This means if you are replacing the url of a submodule, the new URL must be pointing to a valid repository.
 
 ## Usage 🏃‍♂️
+This example is migrating the url from `bitbucket.org` to `github.com`.
+
 Clone your repo that contains submodules and cd inside:
 ```bash
-git clone https://github.com/austenstone/main-test1.git
+git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
 cd main-test1
 ```
 
-Run the script. This example is migrating the url from `bitbucket.org` to `github.com`:
+Run the script:
 ```bash
 migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
 ```
