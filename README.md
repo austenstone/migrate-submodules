@@ -23,9 +23,14 @@ Run the script. This example is migrating the url from `bitbucket.org` to `githu
 ```bash
 migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
 ```
-Your submodules have been updated! 🎉
+Congratulations. Your submodules have been updated! 🎉
 
-Now to push your changes to remote:
+Check them out 👀
+```bash
+cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
+```
+
+If you are happy with the results, push your changes to remote:
 ```bash
 git submodule foreach --recursive git push origin master
 git push origin master
