@@ -45,6 +45,7 @@ git push --all origin
 ```
 
 ## Install ⬇️
+Simply add the script to your PATH.
 ```bash
 cd /usr/local/bin
 curl https://raw.githubusercontent.com/austenstone/migrate-submodules/main/migrate-submodules.sh > migrate-submodules.sh
