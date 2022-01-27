@@ -19,18 +19,19 @@ git clone https://github.com/austenstone/main-test1.git
 cd main-test1
 ```
 
-Run the script. Example is migrating the url from `bitbucket.org` to `github.com`:
+Run the script. This example is migrating the url from `bitbucket.org` to `github.com`:
 ```bash
 migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
 ```
+Your submodules have been updated! 🎉
 
-To push your changes to remote:
+Now to push your changes to remote:
 ```bash
 git submodule foreach --recursive git push origin master
 git push origin master
 ```
 
-You can automatically sync all branches with master by running the following command:
+TIP: You can automatically sync all branches with master by running the following command:
 ```bash
 for BRANCH in `ls .git/refs/heads`; do git rebase master $BRANCH; done
 git push --all origin
