@@ -8,7 +8,7 @@ You can run this script in any git repository and it will recursively itterate s
 1. Executes the sed command provided via `-s` on .gitmodules
 2. Synchronizes submodules' remote URL configuration setting to the value specified in .gitmodules
 3. Updates(pulls) all submodules.
-4. Commits the changes to the branch specified using the `-b` with the message provided via `-m`
+4. Commits the changes to the branch provided via `-b` with the message provided via `-m`
 
 #### NOTES
 - You must have read/write permission on the repositories you are modifying
