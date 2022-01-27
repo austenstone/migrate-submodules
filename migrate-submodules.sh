@@ -7,9 +7,9 @@ submodule_url_rewrite() {
         else
             sed -i $SED_COMMAND .gitmodules
         fi
-        git submodule sync
         git add .gitmodules
         git commit -m "${COMMIT_MESSAGE}"
+        git submodule sync
         # We can update the submodules because they are now pointing at the correct place
         git submodule update --init --remote
         git submodule foreach "git pull origin ${BRANCH_NAME} && git checkout ${BRANCH_NAME}"
