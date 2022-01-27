@@ -1,13 +1,16 @@
 # Migrate Submodules
 
-This is a small script to migrate submodules recursively using [sed](https://man7.org/linux/man-pages/man1/sed.1p.html). This script will not import repositories for you and assumes all required sub repositories have already been imported to your target.
+This is a small script to migrate submodules recursively using [sed](https://man7.org/linux/man-pages/man1/sed.1p.html). 
 
-You can run this script in any git repository and it will recursively itterate submodules do the following:
-- Preform the sed command provided via `-s` on .gitmodules
-- Synchronizes submodules' remote URL configuration setting to the value specified in .gitmodules
-- Commits the changes to the branch specified using the `-b` with the message provided via `-m`
+You can run this script in any git repository and it will recursively itterate submodules and perform the following operations:
+1. Preform the sed command provided via `-s` on .gitmodules
+2. Synchronizes submodules' remote URL configuration setting to the value specified in .gitmodules
+3. Updates(pulls) all submodules.
+4. Commits the changes to the branch specified using the `-b` with the message provided via `-m`
 
-You still need to push the changes it makes to remote.
+#### NOTES
+- You must have read/write permission on the repositories you are modifying
+- This script will not import repositories for you and assumes all required repositories have already been imported to your target. This means if you are replacing the url of a submodule, the new URL must be pointing to a valid repository.
 
 ## Usage 🏃‍♂️
 Clone your repo that contains submodules and cd inside:
