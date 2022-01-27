@@ -2,6 +2,8 @@
 
 Git migrations tools like [GitHub Importer](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/importing-a-repository-with-github-importer) and even [ghe-migrator](https://docs.github.com/en/enterprise-server@3.3/admin/user-management/migrating-data-to-and-from-your-enterprise/migrating-data-to-your-enterprise) are not able to update [submodule urls](https://git-scm.com/docs/gitmodules#Documentation/gitmodules.txt-submoduleltnamegturl). This small script solves that problem by updating all your `.gitmodules` files recursively with a simple [sed](https://linux.die.net/man/1/sed) command.
 
+[Install](https://github.com/austenstone/migrate-submodules#install-%EF%B8%8F)
+
 You can run this script in any git repository and it will recursively itterate submodules and perform the following operations:
 1. Executes the sed command provided via `-s` on .gitmodules
 2. Synchronizes submodules' remote URL configuration setting to the value specified in .gitmodules
