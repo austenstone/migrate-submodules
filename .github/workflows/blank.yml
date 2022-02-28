@@ -1,4 +1,4 @@
-name: CI
+name: Test Migration
 
 on:
   push:
@@ -9,7 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
+    name: Test 🧪
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +28,6 @@ jobs:
           
       - name: Run script
         run: ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
-          
           
       - name: Results
         run: cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
