@@ -14,12 +14,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Run a multi-line script
+      
+      - name: Git config
         run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
+
+      - name: Clone test repo
+        run: |
           git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
           cd main-test1
-          ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
-          cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
+          
+      - name: Run script
+        run: ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
+          
+          
+      - name: Results
+        run: cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
+        
