@@ -55,8 +55,10 @@ chmod +x migrate-submodules.sh
 ```
 Script tested on Ubuntu and MacOS.
 
-## [main-test1](https://github.com/austenstone/main-test1) repo hierarchy
-main-test1 is the root of a small set of repos and is used to test the functionality.
+## Test Repo Hierarchy
+[bitbucket.org/austenstone/main-test1](https://bitbucket.org/austenstone/main-test1) is the root of a small set of repos and is used to test the functionality.
+
+[github.com/austenstone/main-test1](https://github.com/austenstone/main-test1) is the migrated repo.
 ```mermaid
 graph TD;
     main-test1-->child-test1;
