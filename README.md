@@ -8,20 +8,22 @@ You can run this script in any git repository and it will recursively itterate s
 1. Executes the sed command provided via `-s` on .gitmodules
 2. Synchronizes submodules' remote URL configuration setting to the value specified in .gitmodules
 3. Updates(pulls) all submodules.
-4. Commits the changes to the branch specified using the `-b` with the message provided via `-m`
+4. Commits the changes to the branch provided via `-b` with the message provided via `-m`
 
 #### NOTES
 - You must have read/write permission on the repositories you are modifying
 - This script will not import repositories for you and assumes all required repositories have already been imported to your target. This means if you are replacing the url of a submodule, the new URL must be pointing to a valid repository.
 
 ## Usage 🏃‍♂️
+This example is migrating the url from `bitbucket.org` to `github.com`.
+
 Clone your repo that contains submodules and cd inside:
 ```bash
-git clone https://github.com/austenstone/main-test1.git
+git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
 cd main-test1
 ```
 
-Run the script. This example is migrating the url from `bitbucket.org` to `github.com`:
+Run the script:
 ```bash
 migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
 ```
@@ -53,8 +55,10 @@ chmod +x migrate-submodules.sh
 ```
 Script tested on Ubuntu and MacOS.
 
-## [main-test1](https://github.com/austenstone/main-test1) repo hierarchy
-main-test1 is the root of a small set of repos and is used to test the functionality.
+## Test Repo Hierarchy
+[bitbucket.org/austenstone/main-test1](https://bitbucket.org/austenstone/main-test1) is the root of a small set of repos and is used to test the functionality.
+
+[github.com/austenstone/main-test1](https://github.com/austenstone/main-test1) is the migrated repo.
 ```mermaid
 graph TD;
     main-test1-->child-test1;

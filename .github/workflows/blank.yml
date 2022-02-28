@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a multi-line script
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
+          cd main-test1
+          ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
+          cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
