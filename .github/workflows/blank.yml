@@ -25,10 +25,10 @@ jobs:
         run: git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
           
       - name: Run script
-        run: |
-          cd main-test1
-          ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
+        working-directory: main-test1
+        run: ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
           
       - name: Results
+        working-directory: main-test1
         run: cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
         
