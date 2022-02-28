@@ -22,12 +22,12 @@ jobs:
           git config --global user.name "Your Name"
 
       - name: Clone test repo
-        run: |
-          git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
-          cd main-test1
+        run: git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
           
       - name: Run script
-        run: ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
+        run: |
+          cd main-test1
+          ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
           
       - name: Results
         run: cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
