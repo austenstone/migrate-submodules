@@ -46,6 +46,8 @@ for BRANCH in `ls .git/refs/heads`; do git rebase master $BRANCH; done
 git push --all origin
 ```
 
+To see this example in action read the [GitHub Actions workflow](https://github.com/austenstone/migrate-submodules/blob/main/.github/workflows/blank.yml) and also checkout the [previous runs](https://github.com/austenstone/migrate-submodules/actions/workflows/blank.yml).
+
 ## Install ⬇️
 Simply add the script to your PATH.
 ```bash
