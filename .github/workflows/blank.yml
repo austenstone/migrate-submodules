@@ -17,6 +17,8 @@ jobs:
 
       - name: Run a multi-line script
         run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
           cd main-test1
           ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
