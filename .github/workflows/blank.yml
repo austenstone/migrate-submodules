@@ -24,9 +24,9 @@ jobs:
       - name: Clone test repo
         run: git clone https://austenstone@bitbucket.org/austenstone/main-test1.git
           
-      #- name: Run script
-      #  working-directory: main-test1
-      #  run: ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
+      - name: Run script
+        working-directory: main-test1
+        run: ../migrate-submodules.sh -s 's/bitbucket.org/github.com/g' -b 'master'
           
       - name: Results
         working-directory: main-test1
