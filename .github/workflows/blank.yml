@@ -31,5 +31,7 @@ jobs:
       - name: Results
         working-directory: main-test1
         run: |
-          echo $(cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true') | grep 'bitbucket'
+          ! echo $(
+            cat .gitmodules && git submodule foreach --recursive '[ -f .gitmodules ] && cat .gitmodules || true'
+          ) | grep 'bitbucket'
         
